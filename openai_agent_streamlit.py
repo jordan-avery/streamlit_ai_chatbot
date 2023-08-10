@@ -29,7 +29,7 @@ def generate_response(prompt,uploaded_file,api_key):
     #load_dotenv()
     openai.api_key = api_key
     openai_api_key = api_key
-    csv_agent = create_csv_agent(OpenAI(temperature=0),uploaded_file.name, verbose=True)
+    csv_agent = create_csv_agent(OpenAI(temperature=0,openai_api_key=api_key),uploaded_file.name, verbose=True)
     response = csv_agent.run(prompt)
     st.info(response)
     dataset = pd.read_csv(uploaded_file,parse_dates=['Date'],date_format='MM/DD/YYYY')
