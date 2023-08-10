@@ -32,7 +32,11 @@ def generate_response(prompt,uploaded_file,api_key):
     csv_agent = create_csv_agent(OpenAI(temperature=0,openai_api_key=api_key),uploaded_file.name, verbose=True)
     response = csv_agent.run(prompt)
     st.info(response)
-    dataset = pd.read_csv(uploaded_file,parse_dates=['Date'],date_format='MM/DD/YYYY')
+    #dataset = pd.read_csv(uploaded_file,parse_dates=['Date'],date_format='MM/DD/YYYY')
+    # To convert to a string based IO:
+    stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
+    # To read file as string:
+    dataset = stringio.read()
     if 'line' in response:
         st.line_chart(data=dataset,x='Date')
     if 'bar' in response:
