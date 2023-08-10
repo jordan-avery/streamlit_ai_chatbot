@@ -3,7 +3,6 @@ langchain
 openai
 pandas
 matplotlib
-PIL
 plotly
 numpy
 scikit-learn
