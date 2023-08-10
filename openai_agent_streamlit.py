@@ -1,6 +1,6 @@
 from langchain.agents import create_csv_agent
 from langchain.llms import OpenAI 
-from dotenv import load_dotenv
+#from dotenv import load_dotenv
 import openai
 import pandas as pd
 import matplotlib.pyplot as plt
@@ -21,7 +21,7 @@ def chat_with_gpt3(prompt):
     return response.choices[0].text.strip()
 
 def chat_with_csv_agent(prompt,file_name):
-    load_dotenv()
+    #load_dotenv()
     csv_agent = create_csv_agent(OpenAI(temperature=0),file_name, verbose=True)
     return csv_agent.run(prompt)
 
