@@ -12,18 +12,18 @@ import plotly.graph_objects as go
 import plotly.express as px
 from sklearn.svm import SVR
 
-def chat_with_gpt3(prompt):
-    response = openai.Completion.create(
-        engine="text-davinci-002",
-        prompt=prompt,
-        max_tokens=150,  # Adjust the response length as needed
-    )
-    return response.choices[0].text.strip()
+#def chat_with_gpt3(prompt):
+#    response = openai.Completion.create(
+#        engine="text-davinci-002",
+#        prompt=prompt,
+#        max_tokens=150,  # Adjust the response length as needed
+#    )
+#    return response.choices[0].text.strip()
 
-def chat_with_csv_agent(prompt,file_name):
+#def chat_with_csv_agent(prompt,file_name):
     #load_dotenv()
-    csv_agent = create_csv_agent(OpenAI(temperature=0),file_name, verbose=True)
-    return csv_agent.run(prompt)
+#    csv_agent = create_csv_agent(OpenAI(temperature=0),file_name, verbose=True)
+#    return csv_agent.run(prompt)
 
 def generate_response(prompt,uploaded_file,api_key):
     #load_dotenv()
