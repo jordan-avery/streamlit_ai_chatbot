@@ -26,7 +26,7 @@ def chat_with_csv_agent(prompt,file_name):
     return csv_agent.run(prompt)
 
 def generate_response(prompt,uploaded_file):
-    load_dotenv()
+    #load_dotenv()
     csv_agent = create_csv_agent(OpenAI(temperature=0),uploaded_file.name, verbose=True)
     response = csv_agent.run(prompt)
     st.info(response)
